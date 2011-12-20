@@ -39,7 +39,13 @@ describe StringCalc do
       StringCalc.add("//;\n1;2").should == 3
     end
     
+    it "should not allow negative number" do
+      lambda { StringCalc.add("23,-1,2")}.should raise_error(RuntimeError, "negatives not allowed (-1)")
+    end
     
+    it "should report error with all negative numbers listed." do
+      lambda { StringCalc.add("23,-1,2,-8")}.should raise_error(RuntimeError, "negatives not allowed (-1,-8)")
+    end
     
   end
   
