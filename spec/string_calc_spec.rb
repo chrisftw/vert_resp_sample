@@ -21,6 +21,10 @@ describe StringCalc do
       StringCalc.add("11,13,17,19,23").should == 83
     end
     
+    it "should accept strings with \\n delimiters" do
+      StringCalc.add("2\n3\n5\n7").should == 17
+    end
+    
   end
   
 end
