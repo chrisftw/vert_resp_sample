@@ -25,6 +25,10 @@ describe StringCalc do
       StringCalc.add("2\n3\n5\n7").should == 17
     end
     
+    it "should allow \\n and commas as delimiters in the same string" do
+      StringCalc.add("1\n2,3").should == 6
+    end
+    
   end
   
 end
